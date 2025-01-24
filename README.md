@@ -143,6 +143,7 @@ Need bonus points? Answer these questions.
 problem?
 
 Interviewer can register their availablility and the candidate can choose a suitable time based on the availablility of the interviewer there by freeing up HRManager's time.
+
 3. If you had some more time how would you improve your solution?
 
    More filtering parameters:- Right now the manager can input candidate id and interviewer id and the time slots within the same day will be shown, tomorrow's time slots can only seen tomorrow. There's a need for a 3rd parameter date. Manager can input the date range
