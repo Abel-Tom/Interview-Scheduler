@@ -1,8 +1,13 @@
-Usage
+Installation
+
 git clone https://github.com/Abel-Tom/Interview-Scheduler.git
+
 pip install -r requirements.txt
+
 run migrations: python manage.py migrate
+
 run the server: python manage.py runserver
+
 
 To register a User
 
