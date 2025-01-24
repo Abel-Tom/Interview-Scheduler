@@ -16,12 +16,19 @@ API: POST http://127.0.0.1:8000/auth/register/
 payload: {
 
   'username': 'uniqueusername',
+  
   'password' : 'Admin@123',
+  
   'password2' : 'Admin@123',
+  
   'email' : 'uniqueemail@gmail.com',
+  
   'first_name': 'first_name',
+  
   'last_name': 'last_name',
+  
   'type': 'candidate'
+  
   
 }
 
@@ -31,26 +38,34 @@ if you're running this locally for testing purposes no need to create any users.
 
 {
   'username': 'cand1',
+  
   'password': 'Admin@123'
 }
+
 type - candidate
 
 {
   'username': 'int1',
+  
   'password': 'Admin@123'
 }
+
 type - interviewer
 
 {
   'username': 'manager1'
+  
   'password': 'Admin@123'
 }
+
 type - manager
 
 {
   'username': 'admin'
+  
   'password': 'admin'
 }
+
 type - superuser
 
 
@@ -63,7 +78,9 @@ API: POST http://127.0.0.1:8000/auth/login/
 payload: {
 
   'username': 'int2',
+  
   'password' : 'Admin@123'
+  
   
 }
 
@@ -83,7 +100,9 @@ API: POST http://127.0.0.1:8000/register/
 payload: {
 
   'start': '2025-01-26 9:00:00',
+  
   'end' : '2025-01-26 12:00:00'
+  
   
 }
 
@@ -100,7 +119,9 @@ API: GET http://127.0.0.1:8000/timeslots/
 payload: {
 
   'candidate': '6',
+  
   'interviewer' : '5'
+  
   
 }
 response will be in this format 
@@ -120,8 +141,10 @@ Length of the interview slot is one hour. Time slots shorter than this are not c
 Need bonus points? Answer these questions.
 1. Can you suggest a better solution to the above mentioned interview scheduling
 problem?
+
 Interviewer can register their availablility and the candidate can choose a suitable time based on the availablility of the interviewer there by freeing up HRManager's time.
 3. If you had some more time how would you improve your solution?
+
    More filtering parameters:- Right now the manager can input candidate id and interviewer id and the time slots within the same day will be shown, tomorrow's time slots can only seen tomorrow. There's a need for a 3rd parameter date. Manager can input the date range
    time slots available within that date range will be shown. Right now only 1 hour long time slots will be shown. Time slots shorter than 1 hour which can useful for shorter interviews or introductory calls are not shown. A fourth parameter duration is needed. When
    this parameter is given, time slots of this duration will be shown.
