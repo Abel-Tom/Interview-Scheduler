@@ -12,7 +12,9 @@ run the server: python manage.py runserver
 To register a User
 
 API: POST http://127.0.0.1:8000/auth/register/
+
 payload: {
+
   'username': 'uniqueusername',
   'password' : 'Admin@123',
   'password2' : 'Admin@123',
@@ -20,10 +22,13 @@ payload: {
   'first_name': 'first_name',
   'last_name': 'last_name',
   'type': 'candidate'
+  
 }
 
 user type can be 3 types:- 'candidate', 'manager', 'interviewer'
+
 if you're running this locally for testing purposes no need to create any users. There are already existing users. You can login in as any of these users
+
 {
   'username': 'cand1',
   'password': 'Admin@123'
@@ -49,12 +54,17 @@ type - manager
 type - superuser
 
 
+
 To login as manager, candidate or interviewer
 
+
 API: POST http://127.0.0.1:8000/auth/login/
+
 payload: {
+
   'username': 'int2',
   'password' : 'Admin@123'
+  
 }
 
 The response will be refresh tokens and access tokens. 
@@ -63,30 +73,42 @@ The response will be refresh tokens and access tokens.
 
 To register a time slot
 
+
 You need to put the access token in the request header as this is an authenticated view
 Only interviewer and candidate user can register a time slot.
 time should be given in 24 hour format
+
 API: POST http://127.0.0.1:8000/register/
+
 payload: {
+
   'start': '2025-01-26 9:00:00',
   'end' : '2025-01-26 12:00:00'
+  
 }
 
 To get available time slots to schedule interview
 
+
 You need to put the access token in the request header as this is an authenticated view
 Only manager can get the available time slots of interviewer and the candidate
 candidate and interviewer id should be given as the payload
+
 API: GET http://127.0.0.1:8000/timeslots/
 
+
 payload: {
+
   'candidate': '6',
   'interviewer' : '5'
+  
 }
 response will be in this format 
+
 [
  ['10:00 AM', '11:00 AM'],
  ['11:00 AM', '12:00 PM']
+ 
 ]
 
 Assumptions made:
